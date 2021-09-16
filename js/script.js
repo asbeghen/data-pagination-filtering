@@ -111,23 +111,23 @@ const addSearchBar = (list) => {
 
   button.addEventListener('click', () => {
     const searchedName = searchInput.value.toLowerCase();
-    let newArray = [];
+    let newListArray = [];
 
     for (let i = 0; i < list.length; i++) {
       const firstName = list[i].name.first.toLowerCase();
       const lastName = list[i].name.last.toLowerCase();
 
       if (firstName.includes(searchedName) || lastName.includes(searchedName)) {
-        newArray.push(list[i]);
+        newListArray.push(list[i]);
       }
     }
 
-    if (newArray.length > 0) {
+    if (newListArray.length > 0) {
       studentList.style.display = 'grid';
       linkList.style.display = 'block';
       noResultsMsg.textContent = '';
-      showPage(newArray, 1);
-      addPagination(newArray);
+      showPage(newListArray, 1);
+      addPagination(newListArray);
 
     } else {
       studentList.style.display = 'none';
